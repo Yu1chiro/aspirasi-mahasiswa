@@ -1,0 +1,20 @@
+.parallax {
+    /* The image used */
+    background-image: url('/asset/parallax.jpg');
+    
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+@media screen and (max-width: 640px) {
+    #Home {
+        height:80vh;
+    }
+    #Home h1 {
+        margin-top:5rem;
+    }
+}
