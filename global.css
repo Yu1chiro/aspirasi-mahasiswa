@@ -1,3 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+h1 {
+    font-family: "Merriweather", serif;
+    font-weight:bold;
+    letter-spacing:1;
+}
+p {
+    font-family: "PT Serif", serif;
+
+}
+span {
+    font-family: "Merriweather", serif;
+    font-weight:bold;
+}
+a {
+    font-family: "Merriweather", serif;
+    font-weight:bold;
+}
+label {
+    font-family: "Merriweather", serif;
+    font-weight:bold;
+  
+}
+button {
+    font-family: "Merriweather", serif;
+    font-weight:bold;
+
+}
 .parallax {
     /* The image used */
     background-image: url('/asset/parallax.jpg');
