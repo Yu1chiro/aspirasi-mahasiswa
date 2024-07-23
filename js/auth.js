@@ -40,11 +40,11 @@ const firebaseConfig = {
                   loadingElement.style.display = 'none';
                   contentElement.style.display = 'block';
               } else if (!isAdmin && isAdminPage) {
-                  window.location.href = "https://portal-aspirasi.vercel.app/page-admin/Login.html";
+                  window.location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/Login.html";
                 //   window.location.href = "http://127.0.0.1:5501/Login.html";
               } else if (isAdmin && !isAdminPage) {
                 //   window.location.href = "http://127.0.0.1:5501/Admin.html";
-                  window.location.href = "https://portal-aspirasi.vercel.app/page-admin/portal-admin.html";
+                  window.location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/portal-admin.html";
               } else {
                   loadingElement.style.display = 'none';
                   contentElement.style.display = 'block';
@@ -53,7 +53,7 @@ const firebaseConfig = {
       } else {
           if (!isLoginPage) {
             //   window.location.href = "http://127.0.0.1:5501/Login.html";
-              window.location.href = "https://portal-aspirasi.vercel.app/page-admin/Login.html";
+              window.location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/Login.html";
           } else {
               loadingElement.style.display = 'none';
               contentElement.style.display = 'block';
@@ -71,7 +71,7 @@ if (logoutButton) {
                 timer: 5000,
                 showConfirmButton: false
             }).then(() => {
-                location.href = "https://portal-aspirasi.vercel.app/page-admin/Login.html";
+                location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/Login.html";
                 // location.href = "http://127.0.0.1:5501/Login.html";
             });
         }).catch(error => {
