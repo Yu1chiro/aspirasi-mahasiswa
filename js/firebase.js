@@ -74,8 +74,8 @@ signinButton.addEventListener("click", (e) => {
             title: 'Authentification Success',
           }).then(() => {
             // Redirect after the alert is closed
-            // location.href = "https://antibolos.vercel.app/admin.html";
-            location.href = "http://127.0.0.1:5500/page-admin/portal-admin.html";
+            location.href = "https://portal-aspirasi.vercel.app/page-admin/portal-admin.html";
+            // location.href = "http://127.0.0.1:5500/page-admin/portal-admin.html";
           });
         } else {
           alert("Access Denied. Admins only.");
