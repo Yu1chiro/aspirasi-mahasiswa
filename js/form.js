@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Your submit is blocked',
-                text: 'Anda terdeteksi memaksukkan inputan berbahaya! silakkan masukkan inputan yg sesuai',
+                text: 'Anda terdeteksi memaksukkan inputan berbahaya! harap masukkan inputan yg sesuai',
                 showConfirmButton: false
             });
             return;
