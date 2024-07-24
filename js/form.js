@@ -15,6 +15,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
+// Helper function to sanitize input
+function sanitizeInput(input) {
+    // Remove potentially dangerous HTML tags and content
+    let sanitized = input.replace(/<script.*?>.*?<\/script>/gi, '')
+                         .replace(/<iframe.*?>.*?<\/iframe>/gi, '')
+                         .replace(/<object.*?>.*?<\/object>/gi, '')
+                         .replace(/<embed.*?>.*?<\/embed>/gi, '')
+                         .replace(/<applet.*?>.*?<\/applet>/gi, '')
+                         .replace(/<\/?(?:form|input|button|textarea|select|style)[^>]*>/gi, '')
+                         .replace(/<\/?[^>]+>/gi, ''); // Remove remaining HTML tags
+    
+    // Encode special characters to prevent XSS
+    sanitized = sanitized.replace(/&/g, '&amp;')
+                         .replace(/</g, '&lt;')
+                         .replace(/>/g, '&gt;')
+                         .replace(/"/g, '&quot;')
+                         .replace(/'/g, '&#39;');
+    
+    return sanitized;
+}
+
 // Handle form submission
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('form-aspirasi');
@@ -24,12 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         
         // Get form values
-        const prodi = document.getElementById('Prodi').value;
-        const aspirasi = document.getElementById('aspirasi').value;
+        let prodi = document.getElementById('Prodi').value;
+        let aspirasi = document.getElementById('aspirasi').value;
+
+        // Sanitize input
+        prodi = sanitizeInput(prodi);
+        aspirasi = sanitizeInput(aspirasi);
 
         // Validate input
         if (!prodi || !aspirasi) {
-            alert('Harap mengisi semua kolom!');
+            Swal.fire({
+                icon: 'error',
+                title: 'Your submit is blocked',
+                text: 'Anda terdeteksi memaksukkan inputan berbahaya! silakkan masukkan inputan yg sesuai',
+                showConfirmButton: false
+            });
             return;
         }
 
