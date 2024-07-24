@@ -26,7 +26,7 @@ import { getDatabase, get, ref, onValue, remove } from "https://www.gstatic.com/
                     const row = document.createElement('tr');
                     row.innerHTML = `
                         <td class="py-2 px-4 border-b border-gray-200 text-black">${data[key].prodi}</td>
-                        <td class="py-2 px-4 border-b border-gray-200 text-black text-center">${data[key].aspirasi}</td>
+                        <td class="py-2 px-4 border-b border-gray-200 text-black text-start">${data[key].aspirasi}</td>
                         <td class="py-2 px-4 border-b border-gray-200">
                         <h3 class=" text-red-500 text-center font-bold cursor-pointer rounded delete-btn" data-id="${key}">Hapus</h3>
                         </td>
