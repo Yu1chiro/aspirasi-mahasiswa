@@ -25,7 +25,7 @@ const firebaseConfig = {
       return Promise.resolve(false);
   };
 
-  const isAdminPage = window.location.href.includes("admin.html");
+  const isAdminPage = window.location.href.includes("portal-admin.html");
   const isLoginPage = window.location.href.includes("Login.html");
 
   const loadingElement = document.getElementById('loading');
@@ -41,9 +41,9 @@ const firebaseConfig = {
                   contentElement.style.display = 'block';
               } else if (!isAdmin && isAdminPage) {
                   window.location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/Login.html";
-                //   window.location.href = "http://127.0.0.1:5501/Login.html";
+                //   window.location.href = "http://127.0.0.1:5500/page-admin/Login.html";
               } else if (isAdmin && !isAdminPage) {
-                //   window.location.href = "http://127.0.0.1:5501/Admin.html";
+                // window.location.href = "http://127.0.0.1:5500/page-admin/portal-admin.html";
                   window.location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/portal-admin.html";
               } else {
                   loadingElement.style.display = 'none';
@@ -52,7 +52,7 @@ const firebaseConfig = {
           });
       } else {
           if (!isLoginPage) {
-            //   window.location.href = "http://127.0.0.1:5501/Login.html";
+            // window.location.href = "http://127.0.0.1:5500/page-admin/Login.html";
               window.location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/Login.html";
           } else {
               loadingElement.style.display = 'none';
@@ -72,7 +72,8 @@ if (logoutButton) {
                 showConfirmButton: false
             }).then(() => {
                 location.href = "https://aspirasi-mahasiswa.vercel.app/page-admin/Login.html";
-                // location.href = "http://127.0.0.1:5501/Login.html";
+                // location.href = "http://127.0.0.1:5500/page-admin/Login.html";
+
             });
         }).catch(error => {
             console.error('Sign out error', error);
