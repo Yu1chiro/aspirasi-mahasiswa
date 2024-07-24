@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
             Swal.fire({
                 icon: 'error',
                 title: 'Your submit is blocked',
-                text: 'Anda terdeteksi memaksukkan inputan berbahaya! harap masukkan inputan yg sesuai',
+                text: 'Anda terdeteksi memaksukkan inputan berbahaya! Harap masukkan inputan yang sesuai.',
                 showConfirmButton: false
             });
             return;
@@ -67,9 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
         submitButton.innerHTML = 'Mengirim...';
         submitButton.disabled = true;
 
+        // Generate a unique ID based on timestamp
+        const timestamp = Date.now(); // Current timestamp in milliseconds
+
         // Send data to Firebase
         try {
-            await set(ref(database, 'aspirasi-mahasiswa/' + prodi), {
+            await set(ref(database, 'aspirasi-mahasiswa/' + timestamp), {
                 prodi: prodi,
                 aspirasi: aspirasi
             });
@@ -82,8 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Show success alert
             Swal.fire({
                 icon: 'success',
-                title: 'Berhasil!',
-                text: 'Aspirasi berhasil dikirim!',
+                title: 'Thankyou!',
+                text: 'Sending Successfully!',
                 timer: 1000,
                 showConfirmButton: false
             });

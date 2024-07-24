@@ -40,7 +40,7 @@ import { getDatabase, get, ref, onValue, remove } from "https://www.gstatic.com/
                 button.addEventListener('click', async () => {
                     const prodi = button.getAttribute('data-id');
                     await remove(ref(database, 'aspirasi-mahasiswa/' + prodi));
-                    Swal.fire('Deleted!', 'Data telah dihapus.', 'success');
+                    Swal.fire('Deleted!', 'showConfirmButton: false', 'Data telah dihapus.', 'success');
                 });
             });
         });
